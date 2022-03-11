@@ -13,8 +13,8 @@ int main(void)
 	for (number = 0; number < 10; number++)
 	{
 		/* type conversion */
-		putchar("%c", (char)number);
-		putchar("\n");
+		putchar((char)number);
+		putchar('\n');
 	}
 	return (0);
 }
