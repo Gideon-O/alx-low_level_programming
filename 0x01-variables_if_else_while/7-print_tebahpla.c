@@ -14,9 +14,9 @@ int main(void)
 	while (reverse_char >= end_char)
 	{
 		putchar(reverse_char);
-		putchar('\n');
 		reverse_char--;
 	}
+	putchar('\n');
 	return (0);
 }
 
