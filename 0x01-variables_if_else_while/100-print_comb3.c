@@ -19,7 +19,7 @@ int main(void)
 			putchar(nm2);
 
 			if (nm1 == '8' && nm2 == '9')
-			{}
+				continue;
 
 			putchar(',');
 			putchar(' ');
