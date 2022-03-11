@@ -15,12 +15,12 @@ int main(void)
 	for (letter = 'a'; letter <= l_letter; letter++)
 	{
 		if (letter == 'e' || letter == 'q')
-		{}
+			continue;
 		else
 		{
 			putchar(letter);
 		}
-		putchar('\n');
 	}
+	putchar('\n');
 	return (0);
 }
