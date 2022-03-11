@@ -10,15 +10,17 @@ int main(void)
 {
 	char letter;
 
-	l_letter = 'z';
+	char l_letter = 'z';
 
 	for (letter = 'a'; letter <= l_letter; letter++)
 	{
 		if (letter == 'e' || letter == 'q')
-			pass;
+		{}
 		else
 		{
-			putchar("%c");
-			putchar("\n");
+			putchar(letter);
+			putchar('\n');
 		}
+	}
 	return (0);
+}
