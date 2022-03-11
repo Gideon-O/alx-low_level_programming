@@ -13,8 +13,8 @@ int main(void)
 
 	while (reverse_char >= end_char)
 	{
-		putchar("%c", reverse_char);
-		putchar("\n");
+		putchar(reverse_char);
+		putchar('\n');
 		reverse_char--;
 	}
 	return (0);
