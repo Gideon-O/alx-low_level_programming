@@ -13,11 +13,12 @@ int main(void)
 
 	do {
 		/*print lowecase and increments */
-		putchar("%c", lowecase);
+		putchar(lowercase);
 		lowercase++;
 		/* prints uppercase and increments */
-		putchar("%c", uppercase);
+		putchar(uppercase);
 		uppercase++;
-	} while (lowecase <= 'z' && uppercase <= 'Z');
+		putchar('\n');
+	} while (lowercase <= 'z' && uppercase <= 'Z');
 	return (0);
 }
