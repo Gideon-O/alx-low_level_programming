@@ -18,14 +18,14 @@ int main(void)
 	/* my code is here */
 	/* is positive */
 	if (n > 0)
-		printf("%d is positive\n", n);
+		printf("%ld is positive\n", n);
 
 	/* is negative */
 	else if (n == 0)
-		printf("%d is zero\n", n);
+		printf("%ld is zero\n", n);
 
 	/* is zero */
 	else
-		printf("%d is negative\n", n);
+		printf("%ld is negative\n", n);
 	return (0);
 }
