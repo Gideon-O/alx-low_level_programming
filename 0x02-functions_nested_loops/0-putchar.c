@@ -2,11 +2,9 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * main - Entry point
  *
- * Return: On success 1.
- * On error, -1 is return, and error is set appropriately.
+ * Return: Always 0 (SUccess)
  */
 int main(void)
 {
@@ -14,7 +12,7 @@ int main(void)
 
 	int i;
 	
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 8; i++)
 		_putchar(word[i]);
 	_putchar('\n');
 
