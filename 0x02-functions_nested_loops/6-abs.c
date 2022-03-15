@@ -3,7 +3,7 @@
 
 /**
  * _abs - Checks holberton
- * @int: Parameter for the function _abs
+ * @x: Parameter for the function _abs
  *
  * Description: Converts all numbers to their absolute values
  *
