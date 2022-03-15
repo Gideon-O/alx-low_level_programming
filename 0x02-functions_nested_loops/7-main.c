@@ -13,6 +13,7 @@ int main(void)
 	int last = print_last_digit(r);
 
 	_putchar(last);
+	_putchar('0' + r);
 	_putchar('\n');
 
 	return (0);
