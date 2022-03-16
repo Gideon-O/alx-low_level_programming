@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	long x = 1, y = 2, z;
+	long int x = 1, y = 2, z;
 
 	int this_many;
 
@@ -28,7 +28,6 @@ int main(void)
 		{
 			printf("%ld", y);
 		}
-		
 	}
 
 	printf("\n");
