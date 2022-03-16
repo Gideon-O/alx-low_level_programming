@@ -14,9 +14,9 @@ int main(void)
 
 	printf("%ld, ", x);
 
-	for (this_many = 0; this_many < 100; this_many++)
+	for (this_many = 0; this_many < 98; this_many++)
 	{
-		if (this_many <= 98)
+		if (this_many <= 96)
 		{
 			printf("%ld", y);
 			z = x + y;
@@ -24,7 +24,7 @@ int main(void)
 			y = z;
 			printf(", ");
 		}
-		if (this_many == 99)
+		if (this_many == 97)
 		{
 			printf("%ld", y);
 		}
