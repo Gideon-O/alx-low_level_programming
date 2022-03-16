@@ -1,36 +1,29 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - Entry point
- * Return: 0
+ *
+ * Return: Always 0
  */
 
 int main(void)
 {
-	long int x = 1, y = 2, z;
+	int i;
+	long int fibonacci[98], z = 2;
 
-	int this_many;
+	fibonacci[0] = 1;
+	fibonacci[1] = 2;
 
-	printf("%ld, ", x);
-
-	for (this_many = 0; this_many < 98; this_many++)
+	for (i = 2; i < 98; i++)
 	{
-		if (this_many <= 96)
+		fibonacci[i] = fibonacci[i - 1] + fibonacci[1 - 2];
+
+		if ((fibonacci[i] % 2) == 0 && fibonacci[i] < 4000000)
 		{
-			printf("%ld", y);
-			z = x + y;
-			x = y;
-			y = z;
-			printf(", ");
-		}
-		if (this_many == 97)
-		{
-			printf("%ld", y);
+			z = z + fibonacci[i];
 		}
 	}
-
-	printf("\n");
+	printf("%ld\n", z);
 
 	return (0);
 }
