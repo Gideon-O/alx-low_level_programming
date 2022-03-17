@@ -10,9 +10,9 @@ int _isupper(int c)
 {
 	int i;
 
-	if (c >= 65 && c <= 90)
+	if (c >= 'A' && c <= 'Z')
 		i = 1;
-	else if (c >= 97 && c <= 122)
+	else if (c >= 'z' && c <= 'z')
 		i = 0;
 
 	return (i);
