@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include <stdio.h>
+#include <ctype.h>
 /**
  * _isupper - Chaecks if character is upper of lowercase
  * @c: Character value
@@ -10,10 +11,11 @@ int _isupper(int c)
 {
 	int i;
 
-	if (c >= 'A' && c <= 'Z')
+	if (isupper(c))
 	{
 		i = 1;
-	else if (c >= 'z' && c <= 'z')
+	}
+	else
 	{
 		i = 0;
 	}
