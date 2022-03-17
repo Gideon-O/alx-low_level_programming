@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * Description: Prints underscores n times
+ * print_line - Prints underscores n times
  *
  * @n: Parameter integer
  *
