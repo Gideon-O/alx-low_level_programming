@@ -10,28 +10,27 @@
 
 void print_triangle(int size)
 {
-	int x, y;
-	int sp = size - 1;
+	int x, y, row = 0, sp = size - 1;
 
 	if (size > 0)
 	{
-		for (x = 0; x < size; x++)
+		for (; row < size; row++)
 		{
-			for (y = 0; y < size; y++)
+			x = sp;
+			for (; x > 0; x--)
 			{
-				if (y < sp)
-				{
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar('#');
-				}
-				sp--;
-				_putchar('\n');
+				_putchar(' ');
 			}
+			x--;
+
+			for (y = 0; y <= row; y++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
 		}
 	}
+
 	else
 	{
 		_putchar('\n');
