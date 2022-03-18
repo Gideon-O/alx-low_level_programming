@@ -37,11 +37,9 @@ void print_integer(int x)
 {
 	int y = 1000000000;
 
-	for (; y >= 1; y = y / 10)
-	{
+	for (; y >= 1; y /= 10)
 		if (x / y != 0)
 		{
 			_putchar((x / y) % 10 + '0');
 		}
-	}
 }
