@@ -12,18 +12,16 @@ void puts2(char *str)
 	int i = strlen(str), x;
 
 	x = 0;
-	while (x < i)
+	for (; x < i; x++)
 	{
 		if (x == 0 || x == 2 || x % 2 == 0)
 		{
 			_putchar(str[x]);
 		}
-
 		else
 		{
 			continue;
 		}
-		x++;
 	}
 	_putchar('\n');
 }
