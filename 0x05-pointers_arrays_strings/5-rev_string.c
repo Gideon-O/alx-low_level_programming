@@ -15,10 +15,10 @@ void rev_string(char *s)
 	int x = 0, y = n;
 	char xy;
 
-	for (; x < n / 2; x++)
+	for (; x < n; x++, y---)
 	{
 		xy = s[y];
-		s[x] = s[n - x - 1];
-		s[n - x - 1] = xy;
+		s[x] = s[y];
+		s[y] = xy;
 	}
 }
