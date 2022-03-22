@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <ctype.h>
 
 /**
  * _atoi - Converts any integer character to an integer
