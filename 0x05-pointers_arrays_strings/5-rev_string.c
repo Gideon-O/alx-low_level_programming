@@ -12,13 +12,16 @@
 void rev_string(char *s)
 {
 	int n = strlen(s);
-	int x = 0, y = n;
-	char xy;
+	int x = 0, y = n - 1;
+	char v1, v2;
 
-	for (; x < n; x++, y--)
+	while (y > x)
 	{
-		xy = s[y];
-		s[x] = s[y];
-		s[y] = xy;
+		v1 = s[x];
+		v2 = s[y];
+		s[x] = v2;
+		s[y] = v1;
+		y--;
+		x++;
 	}
 }
