@@ -16,9 +16,13 @@ void print_array(int *a, int n)
 	{
 		printf("%d", a[x]);
 
-		while (x != n - 2)
+		if (x != n - 2)
 		{
 			printf(", ");
+		}
+		else
+		{
+			continue;
 		}
 	}
 	printf("\n");
