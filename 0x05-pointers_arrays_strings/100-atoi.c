@@ -10,9 +10,9 @@
 
 int _atoi(char *s)
 {
-	int x = 0;
+	int x = 0, y = strlen(s) - 1;
 
-	for (; x < strlen(s); x++)
+	for (; x < y; x++)
 	{
 		if (s[x] == '+')
 			_putchar('+');
