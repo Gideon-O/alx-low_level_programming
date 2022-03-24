@@ -9,8 +9,8 @@
 
 char *leet(char *s)
 {
-	char *strm = "aAeEoOtTlL";
-	char *num = "4433007711";
+	char strm[] = "aAeEoOtTlL";
+	char num[] = "4433007711";
 
 	int x, y;
 
