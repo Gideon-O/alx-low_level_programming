@@ -12,7 +12,6 @@
 char *_strcat(char *dest, char *src)
 {
 	int i = 0, j = 0;
-	char *temp;
 
 	while (dest[i] != '\0')
 	{
@@ -21,24 +20,11 @@ char *_strcat(char *dest, char *src)
 
 	while (src[j] != '\0')
 	{
+		dest[i] = src[j];
+		i++;
 		j++;
 	}
+	dest[i] = '\0';
 
-	int tot = i + j;
-	int y = 0;
-
-	while (y < tot)
-	{
-		if (y < i)
-		{
-			temp[y] = dest[y];
-		}
-		else if (y > i)
-		{
-			int z = 0;
-
-			temt[y] = src[z];
-		}
-	}
-	return (temp);
+	return (dest);
 }
