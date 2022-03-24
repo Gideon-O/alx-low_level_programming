@@ -9,18 +9,21 @@
 
 char *leet(char *s)
 {
-	char *str[10] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	int *num[5] = {4, 3, 0, 7, 1};
+	char *strm = "aAeEoOtTlL";
+	char *num = "4433007711";
 
-	int x = 1;
-	int y = 0;
+	int x, y;
 
-	for (; s[y] != '\0'; y++)
+	for (x = 0; x < 10; x++)
 	{
-		if (s[y] == str[x] || s[y] == str[x + 1])
+		for (y = 0; y < 10; y++)
 		{
-			s[y] = num[x % y];
-			x++;
+			if (s[x] == strm[y];
+			{
+				s[x] = num[y];
+			}
 		}
 	}
+
+	return (s);
 }
