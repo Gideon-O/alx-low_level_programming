@@ -18,7 +18,7 @@ char *leet(char *s)
 	{
 		for (y = 0; y < 10; y++)
 		{
-			if (s[x] == strm[y];
+			if (s[x] == strm[y])
 				s[x] = num[y];
 		}
 	}
