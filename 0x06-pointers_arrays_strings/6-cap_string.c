@@ -2,46 +2,44 @@
 
 /**
  * cap_string - Capitalize the first letter of each word
- * @str: String to capitalize
+ * @s: String to capitalize
  *
  * Return: str
  */
 
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	int i = 0;
+	int i;
 
-	while (str[i] != '\0')
+	i = 0;
+
+	if (s[0] >= 'a' && s[0] <= 'z')
 	{
-		if (i == 0 && (str[i] >= 'a' && str[i] <= 'z')
-			str[i] = str[i] - 32;
-		if (check_separator(str[i]) && (str[i + 1] >= 'a' && str[i + 1] <= 'z'))
-			str[i + 1] = str[i + 1] - 32;
-		i++;
-	}
-	return (str);
-}
-
-/**
- * check_separator - Sepatarators of words
- * space, tab, newline, ,, ., ;, !, ?, \", (, ), {, }
- * @c: Input character
- *
- * Return: 1 if separator, 0 otherwise
- */
-
-int check_separator(char c)
-{
-	int r = 0;
-
-	char separators[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?',
-		'"', '(', ')', '{', '}' };
-
-	for (; r < 13; r++)
-	{
-		if (s == separators[r])
-			return (1);
+		s[0] = s[0] - 32;
 	}
 
-	return (0);
+	for (i = 1; s[i] != '\0'; i++)
+	{
+		switch (s[i])
+		{
+			case ',':
+			case ';':
+			case '.':
+			case '!':
+			case '?':
+			case '"':
+			case '(':
+			case ')':
+			case '{':
+			case '}':
+			case ' ':
+			case '\n':
+			case '\t':
+				if (s[i + 1] > 96 && s[i + 1] < 123)
+				{
+					s[i + 1] = s[i + 1] - 32;
+				}
+		}
+	}
+	return (s);
 }
