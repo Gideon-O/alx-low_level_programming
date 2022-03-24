@@ -14,7 +14,7 @@ char *leet(char *s)
 
 	int x, y;
 
-	for (x = 0; x < 10; x++)
+	for (x = 0; s[x] != '\0'; x++)
 	{
 		for (y = 0; y < 10; y++)
 		{
