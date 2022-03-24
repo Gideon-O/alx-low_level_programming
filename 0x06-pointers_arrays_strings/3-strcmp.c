@@ -5,9 +5,7 @@
  * @s1: String argument
  * @s2: String argument
  *
- * Return: Greater than 0 if s2 after s1
- * Less than 0 if s2 before s1
- * 0 if s2 = s1
+ * Return: s1[x] - s2[x]
  */
 
 int _strcmp(char *s1, char *s2)
