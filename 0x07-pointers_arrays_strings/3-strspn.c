@@ -12,7 +12,7 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i = 0;
-	int x, y;
+	int x, y, m = 0;
 
 	/* get the string leng of the accept string */
 	while (accept[m] != '\0')
