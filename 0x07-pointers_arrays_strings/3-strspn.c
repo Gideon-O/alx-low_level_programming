@@ -12,27 +12,22 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i = 0;
-	int x, y, m = 0;
-
-	/* get the string leng of the accept string */
-	while (accept[m] != '\0')
-	{
-		m++;
-	}
+	int x, y;
 
 	/* loop through each character in s */
 	for (x = 0; s[x] != '\0'; x++)
 	{
-		/**
-		 * checks for characters that are consistently
-		 * equivalnet to any of the characters in the accpet
-		 */
-		for (y = 0; y < m; y++)
+		for (y = 0; accept[y] != '\0' && accept[y] != s[x]; j++)
+			;
+		if (s[x] == accept[y])
 		{
 			i++;
-
-			if (s[x] != accept[y])
-				return (i);
+		}
+		if (accept[y] == '\0')
+		{
+			return (i);
 		}
 	}
+
+	return (i);
 }
