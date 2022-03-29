@@ -1,4 +1,3 @@
-#include"main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +14,7 @@ void print_diagrams(int *a, int size)
 	int sum1 = 0, sum2 = 0;
 	int i = 0, j = 0, k = 0, l = 0;
 	int k = size - 1;
-	int index_count = sizeof(a);
+	int index_count = size * size;
 
 	for (; l < index_count; l++)
 	{
