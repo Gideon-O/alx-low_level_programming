@@ -17,7 +17,7 @@ void print_diagrams(int *a, int size)
 	int k = size - 1;
 	int index_count = sizeof(a);
 
-	while (l < index_count)
+	for (; l < index_count; l++)
 	{
 		for (; i < size; i++)
 		{
@@ -34,7 +34,6 @@ void print_diagrams(int *a, int size)
 				}
 			}
 		}
-		l++;
 	}
 	printf("%d, %d\n", sum1, sum2);
 }
