@@ -8,7 +8,7 @@
  * 0 if not prime number
  */
 
-int _is_prime_number(int n)
+int is_prime_number(int n)
 {
 	int div = 2;
 
