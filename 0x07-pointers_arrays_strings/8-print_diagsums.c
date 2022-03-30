@@ -12,27 +12,18 @@
 void print_diagrams(int *a, int size)
 {
 	int sum1 = 0, sum2 = 0;
-	int i = 0, j = 0, k = 0, l = 0;
-	int k = size - 1;
-	int index_count = size * size;
+	int i;
+	int s = size * size;
 
-	for (; l < index_count; l++)
+	for (i = 0; i < s; i = i + size + 1)
 	{
-		for (; i < size; i++)
-		{
-			for (; j < size; j++)
-			{
-				if (i == j)
-				{
-					sum1 = sum1 + a[l];
-				}
-				if (j == k && j >= 0)
-				{
-					sum2 = sum2 + a[l];
-					k--;
-				}
-			}
-		}
+		sum1 = sum1 + a[i];
 	}
-	printf("%d, %d\n", sum1, sum2);
+
+	for (i = size - 1; i < s - 1; i = i + size - 1)
+	{
+		sum2 = sum2 + a[i];
+	}
+
+	print ("%d, %d\n", sum1, sum2);
 }
