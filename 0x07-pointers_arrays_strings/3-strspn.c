@@ -12,21 +12,29 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i = 0;
-	int x, y;
+	int flag;
+	char *start = accept;
 
 	/* loop through each character in s */
-	for (x = 0; s[x] != '\0'; x++)
+	while (*s)
 	{
-		for (y = 0; accept[y] != '\0' && accept[y] != s[x]; j++)
-			;
-		if (s[x] == accept[y])
+		flag = 0;
+		while (*accept)
 		{
-			i++;
+			if (*accept == *s)
+			{
+				i++;
+				flag = 1;
+				break;
+			}
+
+			accept++;
 		}
-		if (accept[y] == '\0')
-		{
-			return (i);
-		}
+		s++;
+		accept = start;
+
+		if (flag == 0)
+			break;
 	}
 
 	return (i);
