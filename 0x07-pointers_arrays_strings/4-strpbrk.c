@@ -10,6 +10,8 @@
 
 char *_strpbrk(char *s, char *accept)
 {
+	char *start = accept;
+
 	while (*s)
 	{
 		while (*accept)
@@ -18,8 +20,10 @@ char *_strpbrk(char *s, char *accept)
 			{
 				return (s);
 			}
-			s++;
+			accept++;
 		}
+		accept = start;
+		s++;
 	}
 
 	return (0);
