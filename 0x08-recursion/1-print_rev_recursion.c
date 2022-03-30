@@ -2,24 +2,18 @@
 
 /**
  * _print_rev_recursion - print a string in reverse
- * @s: String to print in reverse
+ * @s: String to reverse and print
  *
- * Return: VOid
+ * Return: Void
  */
 
 void _print_rev_recursion(char *s)
 {
-	int i = 0;
-
-	while (*s)
-		i++;
-
-	while (i > 0)
+	if (*s)
 	{
-		_putchar(*(s + i));
-		_print_rev_recursion((s + i) - 1);
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
 	}
 
 	_putchar('\n');
 }
-
