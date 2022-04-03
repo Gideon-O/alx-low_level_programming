@@ -1,6 +1,6 @@
-#COMMAND LINE ARGUMENTS
+# COMMAND LINE ARGUMENTS
 
-##Declaration
+## Declaration
 
 int main(int argc, char *argv[])
 
