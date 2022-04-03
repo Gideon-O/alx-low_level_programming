@@ -14,26 +14,20 @@
 int main(int argc, char *argv[])
 {
 	int i = 0;
+	int num, sum = 0;
 
-	for (; i < argc; i++)
+	while (argc-- > 1)
 	{
-		if (!isdigit(argv[i]))
+		for (; argv[argc][i]; i++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!(isdigit(argv[argc][i])))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-
-		else if (argc == 0)
-		{
-			printf("0\n");
-			return (0);
-		}
-		else
-		{
-			int sum;
-
-			sum += argv[i];
-		}
+		num = atoi(argv[argc]);
+		sum += num;
 	}
 	printf("%d\n", sum);
 
