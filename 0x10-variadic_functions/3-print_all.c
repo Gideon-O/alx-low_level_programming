@@ -6,10 +6,8 @@
 /**
  * print_all - a function that prints all arguments passed
  * @format: Tyepe of arguments
- *
  * Return: Void
  */
-
 void print_all(const char * const format, ...)
 {
 	va_list ap;
@@ -48,7 +46,6 @@ void print_all(const char * const format, ...)
 		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f' ||
 					format[i] == 's') && format[(i + 1)] != '\0')
 			printf(", ");
-
 		i++;
 	}
 	va_end(ap);
