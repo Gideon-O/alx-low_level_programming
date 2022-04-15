@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "mai.h"
+#include "function_pointers.h"
 
 /**
  * int_index - A function that serches for an integer
