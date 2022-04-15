@@ -6,6 +6,7 @@
  * print_numbers - a function that prints numbers separated by a string
  * @separator: string to print between numbers
  * @n: numbers of integers passed to function
+ * @...: other parameters
  *
  * Return: VOid
  */
