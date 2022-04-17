@@ -9,8 +9,6 @@
 
 int main(void)
 {
-	char *file_name = _FILE_;
-
-	printf("%s\n", file_name);
+	printf("%s\n", _FILE_);
 	return (0);
 }
