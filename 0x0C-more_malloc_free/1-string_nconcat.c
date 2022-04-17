@@ -42,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		else
 		{
-			new_string[x] + *s2, s2++;
+			new_string[x] = *s2, s2++;
 		}
 	}
 	new_string[x] = '\0';
