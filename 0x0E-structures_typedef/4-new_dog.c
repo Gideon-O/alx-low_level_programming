@@ -14,39 +14,37 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
-	char *copy_name, *copy_owner;
 	int name_len, owner_len, i;
 
-	if (name == NULL || owner == NULL)
+	new_dog = (dog_t *)malloc(sizeof(dog_t));
+	if (new_dog == NULL)
 		return (NULL);
-
+	name_len = 0;
+	owner_len = 0;
 	while (name[name_len])
 		name_len++;
-
 	while (owner[owner_len])
 		owner_len++;
 
-	new_dog = malloc(sizeof(dog_t));
-	if (new_dog == NULL)
+	new_dog->name = malloc(name_len * sizeof(new_dog->name));
+	if (new_dog->name == NULL)
+	{
+		free(new_dog);
 		return (NULL);
-
-	copy_name = malloc(name_len + 1);
-	if (copy_name == NULL)
-		return (NULL);
-	for (i = 0; name[i]; i++)
-		copy_name[i] = name[i];
-	copy_name[i] = '\0';
-
-	copy_owner = malloc(owner_len + 1);
-	if (copy_owner == NULL)
-		return (NULL);
-	for (i = 0; owner[i]; i++)
-		copy_owner[i] = owner[i];
-	copy_owner[i] = '\0';
-
-	new_dog->name = copy_name;
+	}
+	for (i = 0; i < name_len; i++)
+		new_dog->name[i] = name[i];
 	new_dog->age = age;
-	new_dog->owner = copy_owner;
+
+	new_dog->owner = malloc(owner_len * sizeof(new_dog->owner));
+	if (new_dog->owner == NULL)
+	{
+		free(new_dog->owner);
+		free(new_dog);
+		return (NULL);
+	}
+	for (i = 0; i < owner_len; i++)
+		new_dog->owner[i] = owner[i];
 
 	return (new_dog);
 }
