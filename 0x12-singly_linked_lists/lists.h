@@ -3,16 +3,16 @@
 
 /**
  * struct list_t - Structure for list node
- * @list_words: String
- * @word_len: Lenght of the string
- * @ptr: Pointer to the node
+ * @str: String
+ * @len: Lenght of the string
+ * @next: Pointer to the node
  */
 
 struct list_t
 {
-	char *list_words;
-	int word_len;
-	struct list_t *ptr
+	char *str;
+	int len;
+	struct list_t *next
 };
 
 size_t print_lists(const list_t *h);
