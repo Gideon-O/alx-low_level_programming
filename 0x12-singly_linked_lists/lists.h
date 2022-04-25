@@ -1,6 +1,8 @@
 #ifndef _LISTS_H_
 #define _LISTS_H_
 
+#include <stddef.h>
+
 /**
  * struct list_t - Structure for list node
  * @str: String
@@ -12,7 +14,7 @@ struct list_t
 {
 	char *str;
 	int len;
-	struct list_t *next
+	struct list_t *next;
 };
 
 size_t print_lists(const list_t *h);
