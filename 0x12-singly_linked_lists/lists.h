@@ -4,18 +4,18 @@
 #include <stddef.h>
 
 /**
- * struct list_t - Structure for list node
+ * struct list_s- Structure for list node
  * @str: String
  * @len: Lenght of the string
  * @next: Pointer to the node
  */
 
-struct list_t
+typedef struct list_s
 {
 	char *str;
 	int len;
 	struct list_t *next;
-};
+} list_t;
 
 size_t print_lists(const list_t *h);
 size_t list_len(const list *h);
