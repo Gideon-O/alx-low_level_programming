@@ -1,5 +1,6 @@
 #ifndef _LISTS_H_
 #define _LISTS_H_
+#include <stdlib.h>
 
 /**
  * struct listint_t - A structure containing integers
