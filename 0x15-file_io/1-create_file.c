@@ -1,39 +1,32 @@
 #include "main.h"
-#include <sys/type.h>
+#include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/uio.h>
 #include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <fcntl.h>
 
 /**
- * create_file - A function that creates a file in POSIX
- * @filename: Name of the file to be created
- * @text_content: Information to print on th efile
- * Return: 1 on success and -1 on fail
+ * create_file - A function that creates a file
+ * @filename: The filename to create
+ * @text_content: A NULL terminated string to write to the file
+ * Return: 1 on success, -1 if file can not be created, nor written,
+ * nor write fails.
  */
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, len;
-	ssize_t fdw;
+	int fdo, fdw, len = 0;
 
 	if (filename == NULL)
 		return (-1);
-	fd = open(filename, O_CREATE | O_WRONLY | O_TRUNC, 0\600);
-	if (fd == -1)
+	fdo = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
+	if (fdo < 0)
 		return (-1);
-	if (text_content != NULL)
-	{
-		len = 0;
-		while (*(text_content + len) != '\0')
-			len++;
-		fdw = write(fd, text_content, len);
-		if (fdw == -1)
-		{
-			write(1, "fails", 6);
-			return (-1);
-		}
-	}
-	close(fd);
+	while (text_content && *(text_content + len))
+		len++;
+	fdw = write(fdo, text_content, len);
+	close(fdo);
+	if (fdw < 0)
+		return (-1);
 	return (1);
 }
