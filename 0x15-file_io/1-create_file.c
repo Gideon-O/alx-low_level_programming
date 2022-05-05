@@ -1,9 +1,10 @@
 #include "main.h"
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/uio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdlib.h>
 
 /**
  * create_file - A function that creates a file
