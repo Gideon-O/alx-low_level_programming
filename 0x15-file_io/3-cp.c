@@ -1,10 +1,10 @@
+#include <stdio.h>
 #include "main.h"
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <stdlib.h>
-#include <stdio.h>
 #include <fcntl.h>
-
+#include <unistd.h>
+#include <stdlib.h>
 /**
  * _error - Read file.
  * @e: Error number
@@ -23,7 +23,6 @@ void _error(int e, char *filename)
 		exit(99);
 	}
 }
-
 /**
  * cp - Copies the content of a file to another file.
  * @file_from: Name of the source file.
@@ -35,29 +34,27 @@ void cp(char *file_from, char *file_to)
 	int fd_read, res_read, fd_write, res_write;
 	char *buf[1024];
 
-	/* reading a file */
+	/* READ */
 	fd_read = open(file_from, O_RDONLY);
 	if (fd_read < 0)
 		_error(98, file_from);
-	/* writting to a file*/
+	/* WRITE */
 	fd_write = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_write < 0)
 	{
 		close(fd_read);
 		_error(99, file_to);
 	}
-	do
-	{
-		/* reading a file */
+	do {
+		/* READ */
 		res_read = read(fd_read, buf, 1024);
 		if (res_read < 0)
 			_error(98, file_from);
-		/* writting to a file */
+		/* WRITE */
 		res_write = write(fd_write, buf, res_read);
 		if (res_write < res_read)
 			_error(99, file_to);
-	}while (res_write == 1024);
-	
+	}	while (res_write == 1024);
 	if (close(fd_read) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_read);
@@ -70,23 +67,19 @@ void cp(char *file_from, char *file_to)
 		exit(100);
 	}
 }
-
 /**
- * main - Entry to prograd
- * @argc: Number of arguments
- * @argv: Argment array
- *
- * Return: 0 on success
+ * main - Copies the content of a file to another file.
+ * @ac: Argument count
+ * @av: argument values
+ * Return: 0 on succes, -1 on error.
  */
-
-int main(int argc, char *argv)
+int main(int ac, char *av[])
 {
-	if (argc != 3)
+	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	cp(argv[1], argv[2]);
-
+	cp(av[1], av[2]);
 	return (0);
 }
