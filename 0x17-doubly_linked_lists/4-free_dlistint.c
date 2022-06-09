@@ -11,14 +11,11 @@
 void free_dlistint(dlistint_t *head)
 {
 	struct dlistint_t temp;
-
-	temp = head;
-	while (temp->next)
+	
+	while (head)
 	{
-		free(temp->prev);
-		free(temp->n);
-		free(temp->next);
-		free(temp);
+		temp = head->next;
+		free(head);
+		head = temp;
 	}
-	free(temp);
 }
