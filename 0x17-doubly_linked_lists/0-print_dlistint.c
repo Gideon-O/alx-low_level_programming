@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <printf.h>
+#include <stdio.h>
 
 /**
  * print_dlistint - print list values
