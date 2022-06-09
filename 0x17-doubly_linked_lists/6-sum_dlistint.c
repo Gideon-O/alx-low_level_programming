@@ -1,13 +1,13 @@
 #include "lists.h"
 
 /**
- * sum_dnodeint - Function to get the sum of nodes
+ * sum_dlistint - Function to get the sum of nodes
  * @head: Pointer to first node
  *
  * Return: Integer value
  */
 
-int sum_dnodeint(dlistint_t *head)
+int sum_dlistint(dlistint_t *head)
 {
 	int sum = 0;
 
