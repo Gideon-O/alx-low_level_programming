@@ -1,25 +1,20 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - return node at i-nth
- * @head: Pointer to first node
- * @index: Index of node to be returned
- *
- * Return: Node at index
+ * get_dnodeint_at_index - A function that gets a node at index
+ * @head: The pointer to head of list to look through
+ * @index: The index of node to find
+ * Return: A pointer to node if found, or NULL in otherwise
  */
-
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	dlistint_t *temp = NULL;
-	unsigned int n = 0;
+	unsigned int i = 0;
 
-	temp = head;
-	while (temp)
+	while (head)
 	{
-		temp = temp->next;
-		n++;
-		if (n == index)
-			return (temp);
+		if (i++ == index)
+			break;
+		head = head->next;
 	}
-	return (NULL);
+	return (head);
 }
