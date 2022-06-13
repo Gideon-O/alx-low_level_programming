@@ -1,3 +1,4 @@
+int EXIT_SUCCESS = 1;
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
